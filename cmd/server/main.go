@@ -3,6 +3,7 @@ package main
 import (
 	application "Hexagonal-Architecture-whith-Golang/internal/app"
 	"Hexagonal-Architecture-whith-Golang/internal/handler"
+	"Hexagonal-Architecture-whith-Golang/internal/infrastructure/config"
 	"Hexagonal-Architecture-whith-Golang/internal/infrastructure/database"
 	"Hexagonal-Architecture-whith-Golang/internal/repository"
 	"Hexagonal-Architecture-whith-Golang/internal/service"
@@ -10,6 +11,8 @@ import (
 )
 
 func main() {
+	config.LoadEnv()
+
 	db := database.NewPosgreSQLConnection()
 
 	allRepositories := repository.NewRepositories(db, repository.Postgresql)
