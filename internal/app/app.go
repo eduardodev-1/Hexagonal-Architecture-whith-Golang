@@ -10,9 +10,9 @@ type App struct {
 	router *fiber.App
 }
 
-func NewApp(allhandlers *handler.Handlers) *App {
+func NewApp(handlers *handler.Handlers) *App {
 	app := fiber.New()
-	router.SetupRoutes(app, allhandlers)
+	router.SetupRoutes(app, handlers)
 	return &App{router: app}
 }
 

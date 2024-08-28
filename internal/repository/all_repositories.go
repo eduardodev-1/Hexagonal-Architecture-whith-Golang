@@ -6,6 +6,10 @@ import (
 	"log"
 )
 
+const (
+	Postgresql = "postgresql"
+)
+
 type Repositories struct {
 	UserRepository UserRepository
 }

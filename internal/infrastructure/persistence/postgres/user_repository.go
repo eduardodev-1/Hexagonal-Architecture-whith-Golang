@@ -16,7 +16,6 @@ func NewPostgresUserRepository(db *sqlx.DB) repository.UserRepository {
 }
 
 func (r *PostgresUserRepository) GetUserByID(id int) (*domain.User, error) {
-	// Lógica simulada, em um caso real seria uma query para o banco de dados
 	if id == 1 {
 		return &domain.User{
 			ID:    1,
